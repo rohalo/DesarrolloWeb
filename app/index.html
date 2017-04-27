@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="./views/css/indexSPCSS.css"/>
+    <link rel="stylesheet" href="./views/css/style.css"/>
+    <link rel="stylesheet" href="./views/css/global.css"/>
+    <link rel="stylesheet" href="./views/css/stylePUsuario.css"/>
+    	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- endbuild -->
+
+
+  </head>
+  <body ng-app="proyectoApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <header id="header" >
+    <nav class=" navbar-default " id="fondo">
+      <div class="container-fluid">
+          <div class="navbar-header" href="#"><a class="navbar-brand>"><img alt="logo" id="logo" class="headerLogo" src="./views/img/DeRUT.png"></a>
+        <!-- Brand and toggle get grouped for better mobile display -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nabvar" >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+         </div>
+
+        <div class="collapse navbar-collapse" id="nabvar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#slideComo" title="Como" >Como lo hicieron</a></li>
+            <li><a href="#q2" title="Servicio">Servicios</a></li>
+            <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#miModal">
+                <span class="glyphicon glyphicon-user"></span>
+              </button>
+            </div>
+          </form>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+
+        </div>
+    </nav>
+    <!-- Modal -->
+
+    <div class=" modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="MainCtrl">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h2 class="text-center">Bienvenido</h2>
+          </div>
+          <div class="modal-body">
+            <div class="tabbable">
+            <ul class="nav nav-tabs nav-justified">
+              <li class="active"><a data-toggle="tab" href="#login">Login</a></li>
+              <li><a data-toggle="tab" href="#registro">Registro</a></li>
+            </ul>
+            <div class="tab-content" >
+              <div id="login" class="tab-pane fade in active">
+                      <form>
+                          <div class="form-group">
+                          <label for="correo">Direccion de correo</label>
+                          <input type="email" class="form-control" ng-model="credencial.email" placeholder="Correo">
+                          </div>
+                        <div class="form-group">
+                          <label for="contrasena">Password</label>
+                          <input type="password" class="form-control" ng-model="credencial.password" placeholder="Password">
+                        </div>
+                        <a ng-click="comprobar(credencial)" class="btn btn-primary" data-dismiss="modal">Login</a>
+                      </form>
+              </div>
+
+              <div id="registro" class="tab-pane fade">
+                <form>
+                    <div class="form-group">
+                    <label for="correo">Direccion de correo</label>
+                    <input type="email" class="form-control" ng-model="clienteCrear.correo" placeholder="Correo">
+                    </div>
+                  <div class="form-group">
+                    <label for="contrasena">Password</label>
+                    <input type="password" class="form-control" ng-model="clienteCrear.password" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" ng-model="clienteCrear.nombre" placeholder="Nombre">
+                  </div>
+                  <div class="form-group">
+                    <label for="apellido Paterno">Apellido Paterno</label>
+                    <input type="text" class="form-control" ng-model="clienteCrear.apellidoP" placeholder="Nombre">
+                  </div>
+                  <div class="form-group">
+                    <label for="apellidoMaterno">Apellido Materno</label>
+                    <input type="text" class="form-control" ng-model="clienteCrear.apellidoM" placeholder="Nombre">
+                  </div>
+                  <div class="form-group">
+                    <input type="radio" ng-model="clienteCrear.sexo" value="hombre"> Hombre<br>
+                    <input type="radio" ng-model="clienteCrear.sexo" value="mujer"> Mujer<br>
+                  </div>
+                  <button  class="btn btn-primary"  ng-click="addCliente(clienteCrear)" data-dismiss="modal">Registrar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    </header>
+
+
+
+    <div class="container-fluid" ng-view=""></div>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/historial.js"></script>
+        <script src="scripts/controllers/recarga.js"></script>
+        <script src="scripts/controllers/main2.js"></script>
+        <script src="scripts/controllers/admin.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

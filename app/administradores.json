@@ -1,0 +1,17 @@
+{
+  "administradores": [{
+    "id": 0,
+    "nombre": "Issac",
+    "apellido": "Arzate",
+    "inscripcion": "26-03-2017",
+    "contrasena": "123456",
+    "domicilio": "San Borja #327"
+  }, {
+    "id": 1,
+    "nombre": "Vanessa",
+    "apellido": "Lopez",
+    "inscripcion": "26-05-2017",
+    "contrasena": "369258",
+    "domicilio": "San Bartolo El Chico"
+  }]
+}

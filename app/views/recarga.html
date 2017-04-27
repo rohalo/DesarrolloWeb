@@ -1,0 +1,226 @@
+
+<div class="fluid-container screenCenter textosColor" ng-controller="RecargaCtrl">
+  <div class="panel panel-default container">
+  <div class="container form">
+    <form>
+      <div class="form-group ">
+        <label for="Telefono">Numero</label>
+        <select ng-model="numeroTarjetas" ng-options="tarjetas.numero as (tarjeta.numero) for tarjeta in modeloTarjetas.tarjetas">
+        </select>
+      </div>
+
+    <div class="form-group">
+      <label for="dinero">Dinero a agregar:</label>
+      <input type="number" class="form-control " id="dinero" placeholder="$">
+    </div>
+    </form>
+</div>
+
+<div class="container ">
+  <div class="row">
+    <a class= "btn btn-warning" href="#" role="button" data-toggle="modal" data-target="#recarga">Recargar</a>
+  </div>
+</div>
+</div>
+
+<div class="panel panel-default container">
+<div class="container textosColor">
+  <div class="panel">
+
+      <div class="input-group">
+        <div class="col-lg-4 col-md-4 col-sm-6 text-center">
+          <div class="media">
+            <div class="media-body">
+              <p class="media-heading">Buscar Tarjeta</p>
+              <input type="text" ng-model="search" placeholder="Busqueda tarjeta"/>
+              <div ng-bind-html="thisCanBeusedInsideNgBindHtml"></div>
+            </div>
+          </div>
+
+        
+
+      </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6 text-center">
+          <div class="media">
+            <div class="media-body">
+              <p class="media-heading">Numero</p>
+              <input class ="form-control" ng-model="tarjetaInput.numero"/>
+            </div>
+          </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 text-center">
+            <div class="media">
+              <div class="media-body">
+                <p class="media-heading">Nombre</p>
+                <input class ="form-control" ng-model="tarjetaInput.nombre"/>
+              </div>
+            </div>
+          </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 text-center">
+              <div class="media">
+                <div class="media-body">
+                  <p class="media-heading">Caducidad</p>
+                  <input class ="form-control" ng-model="tarjetaInput.caducidad"/>
+              </div>
+            </div>
+          </div>
+          <span class="input-group-btn">
+          <button class="btn btn-default" ng-hide="hide()" ng-click="addTarjeta(tarjetaInput)">Añadir</button><br/>
+          <button class="btn btn-default" ng-hide="show()" ng-click="show2()">Regresar</button>
+        </span>
+      </div>
+    </div>
+  <table class="table table-responsive table-hover table-striped">
+    <thead>
+      <tr>
+        <th>Numero de tarjeta</th>
+        <th>Nombre del dueño</th>
+        <th>Fecha vencimiento</th>
+        <th>Opciones</th>
+      </tr>
+    </thead>
+
+    <tbody ng-repeat="tarjeta in modeloTarjetas.tarjetas | orderBy:'tipo'|filter:search">
+      <tr>
+        <td>{{tarjeta.numero}}</td>
+        <td>{{tarjeta.nombre}}</td>
+        <td>{{tarjeta.caducidad}}</td>
+
+        <td>
+          <div class="row">
+          <div class="form-group">
+          <div><button type="button" class="btn btn-default btn"  ng-click="editarTarjeta(tarjeta)"><i class="glyphicon glyphicon-pencil"></i></button></div>
+        </div>
+        <div class="form-group">
+        <div><button type="button" class="btn btn-default btn" ng-click="removeTarjeta(tarjeta)"><i class="glyphicon glyphicon-trash"></i></button></div>
+      </div>
+      </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="container-fluid">
+    <div class="row">
+      <a class= "btn btn-success" data-toggle="modal" data-target="#agregarRecargaModal">Agregar</a>
+
+    </div>
+  </div>
+</div>
+</div>
+<div class="container">
+  <div class="row">
+    <a class= "btn btn-success" href="#!/about" >Regresar</a>
+  </div>
+</div>
+</div>
+
+<div class="modal fade" id="recarga" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <p class="text-center">Su Solicitud ha sido confirmada</p>
+        <div class="row center-block ">
+          <a class= "btn btn-default" href="paginaUsuario.html" role="button">Aceptar</a>
+
+        </div>
+
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+<!-- modal crear -->
+
+  <div class="modal fade" id="agregarRecargaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content textosColor">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h2 class="text-center">Agregar Tarjeta</h2>
+        </div>
+        <div class="modal-body">
+
+          <div class="tab-content">
+            <div id="contacto" class="tab-pane fade in active">
+              <form>
+                <div class="form-group">
+                <label for="numeroTarjeta">Numero de tarjeta</label>
+                <input type="text" class="form-control" ng-model="tarjetaNueva.numero"  placeholder="xxxx-xxxx-xxxx-xxxx">
+                </div>
+              <div class="form-group">
+                <label for="Telefono">Nombre del propietario</label>
+                <input type="text" class="form-control" ng-model="tarjetaNueva.dueno" placeholder="Propietario">
+              </div>
+              <div class="form-group">
+                <label for="Marca">Marca</label>
+                <select ng-model="tiposTarjeta" ng-options="tarjeta.tipoId as tarjeta.compania for tarjeta in tipoTarjeta" ng-model="tarjetaNueva.compania">
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fecha">Fecha de vencimiento</label>
+                <input type="date" class="form-control" ng-model="tarjetaNueva.fecha">
+              </div>
+
+              <div class="form-group">
+                <label for="Telefono">Numero de seguridad</label>
+                <input type="text" class="form-control" ng-model="tarjetaNueva.seguridad" placeholder="xxx">
+              </div>
+
+              <a href="#" class="btn btn-success"  data-toggle="modal" ng-click="">Agregar</a>
+              </form>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- modal modificar -->
+
+<div class="modal fade" id="modificarRecargaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content textosColor">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="text-center">Modificar Tarjeta</h2>
+      </div>
+      <div class="modal-body">
+
+        <div class="tab-content">
+          <div id="contacto" class="tab-pane fade in active">
+            <form>
+              <div class="form-group">
+              <label for="numeroTarjeta">Numero de tarjeta</label>
+              <input type="text" class="form-control" ng-model="tarjetaModificar.numero" id="Dispositivo" placeholder="xxxx-xxxx-xxxx-xxxx">
+              </div>
+            <div class="form-group">
+              <label for="Telefono">Nombre del propietario</label>
+              <input type="text" class="form-control" ng-model="tarjetaModificar.dueno" placeholder="Propietario">
+            </div>
+            <div class="form-group">
+              <label for="Marca">Marca</label>
+              <select ng-model="tiposTarjeta" ng-options="tarjeta.tipoId as tarjeta.compania for tarjeta in tipoTarjeta" ng-model="tarjetaModificar.compania">
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="fecha">Fecha de vencimiento</label>
+              <input type="date" class="form-control" ng-model="tarjetaModificar.fecha">
+            </div>
+
+            <div class="form-group">
+              <label for="Telefono">Numero de seguridad</label>
+              <input type="text" class="form-control" ng-model="tarjetaModificar.seguridad" placeholder="xxx">
+            </div>
+
+            <a href="#" class="btn btn-success"  data-toggle="modal" ng-click="">Modificar</a>
+            </form>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>

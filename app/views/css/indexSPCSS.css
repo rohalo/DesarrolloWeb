@@ -1,0 +1,288 @@
+
+/********************************/
+/*       Fade Bs-carousel       */
+/********************************/
+.fade-carousel {
+    position: relative;
+    height: 100vh;
+}
+.fade-carousel .carousel-inner .item {
+    height: 100vh;
+}
+.fade-carousel .carousel-indicators > li {
+    margin: 0 2px;
+    background-color: #f39c12;
+    border-color: #f39c12;
+    opacity: .7;
+}
+.fade-carousel .carousel-indicators > li.active {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+
+/********************************/
+/*          Hero Headers        */
+/********************************/
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+      -webkit-transform: translate3d(-50%,-50%,0);
+         -moz-transform: translate3d(-50%,-50%,0);
+          -ms-transform: translate3d(-50%,-50%,0);
+           -o-transform: translate3d(-50%,-50%,0);
+              transform: translate3d(-50%,-50%,0);
+}
+.hero h1 {
+    font-size: 6em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+
+/********************************/
+/*            Overlay           */
+/********************************/
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #080d15;
+    opacity: .7;
+}
+
+/********************************/
+/*          Custom Buttons      */
+/********************************/
+.btn.btn-lg {padding: 10px 40px;}
+.btn.btn-hero,
+.btn.btn-hero:hover,
+.btn.btn-hero:focus {
+    color: #f5f5f5;
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+    outline: none;
+    margin: 20px auto;
+}
+
+/********************************/
+/*       Slides backgrounds     */
+/********************************/
+.fade-carousel .slides .slide-1,
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.fade-carousel .slides .slide-1 {
+  background-image: url(https://ununsplash.imgix.net/photo-1416339134316-0e91dc9ded92?q=75&fm=jpg&s=883a422e10fc4149893984019f63c818);
+}
+.fade-carousel .slides .slide-2 {
+  background-image: url(https://ununsplash.imgix.net/photo-1416339684178-3a239570f315?q=75&fm=jpg&s=c39d9a3bf66d6566b9608a9f1f3765af);
+}
+.fade-carousel .slides .slide-3 {
+  background-image: url(https://ununsplash.imgix.net/photo-1416339276121-ba1dfa199912?q=75&fm=jpg&s=9bf9f2ef5be5cb5eee5255e7765cb327);
+}
+.slide1{
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(https://unsplash.com/collections/176831/transport?photo=mVhd5QVlDWw);
+}
+
+/********************************/
+/*          Media Queries       */
+/********************************/
+@media screen and (min-width: 980px){
+    .hero { width: 980px; }
+}
+
+.fondo{
+  background-color: #1abc9c;
+}
+
+.fondoImg{
+  background-image: url('../img/C.jpg');
+}
+
+.fondoImgQ2{
+  background-image: url('../img/ca.jpg');
+  height: 600;
+}
+
+.fondoImgQ3{
+  background-image: url('../img/trans.jpg');
+}
+
+.centroLateralIzquierda{
+  margin-top: 50px;
+  margin-left: 50px;
+
+}
+
+@media screen and (min-width: 1300px)
+{
+.centroLateral{
+
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+}
+
+.textoAlCentro{
+  text-align: center;
+}
+
+@media screen and (max-width: 1300px)
+{
+  .ocultar{display: none;}
+  .completo{min-height: 100%;
+    height: 100%;}
+}
+.altura{
+  height: 600px;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.contactoForm{
+  padding-left: 100px ;
+  padding-top:  100px ;
+}
+
+
+@media screen and (min-width: 769px)
+{
+  .contactoFoto{
+    padding-top:  100px ;
+  }
+}
+
+
+@media screen and (max-width: 769px)
+{
+  .contactoFotoNoMostrar{
+    display: none;
+  }
+}
+
+
+.jumbotronContacto{
+  background-color: #5E5D5D !important;
+}
+
+.separador{
+  background-color:#FFFFFF;
+  height: 15px;
+}
+
+.footer{
+  background-color:#2B2B2B ;
+}
+
+.footerText{
+  color:#FBF9F8;
+}
+
+
+.transition-050 {
+  -moz-transition: 0.50s;
+  -webkit-transition: 0.50s;
+  -ms-transition: 0.50s;
+  -o-transition: 0.50s;
+  transition: 0.50s;
+}
+.opacity85{
+  opacity: 0.85;
+  filter: alpha(opacity=85);
+}
+body { background-color:#333; color:#eee}
+.module { max-width: 500px; margin:auto; }
+.module figure {
+  position: relative;
+  overflow: hidden;
+  border:1px solid #fff;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.module .small {
+  float: left;
+  width: 50%;
+}
+.module figure img {
+  display: block;
+  max-width: 100%;
+}
+.module figcaption {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  max-height: 27px;
+}
+.module .text {
+  color: #7A8B8B;
+  background-color: #fff;
+  font-size:0.90em;
+}
+.module figure:hover figcaption { max-height: 100%;}
+.module figure:hover figcaption .text {
+  background-color: #7A8B8B;
+  color:#fff;
+}
+.module figcaption a { display: block; text-decoration:none; }
+.module .title {
+  display: inline-block;
+  padding: 5px;
+  text-transform:uppercase;
+}
+.module .desc {
+  display: block;
+  padding: 15px;
+}
+.bgcolor {
+  background-color: #fff;
+}
+
+.imagenMosaico{
+  height: 250px;
+  width: 250px;
+}
+
+.textosColor{
+  color:#060301;
+}
+
+.jumbotronColor{
+  background-color: #E48E38;
+}

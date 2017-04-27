@@ -1,0 +1,95 @@
+
+<div ng-controller="AboutCtrl" class="container-fluid">
+  <div class="container-fluid screenCenter textosColor" >
+    <div class="panel panel-default container-fluid">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Lista de dispositivos</div>
+      <div class="panel-body">
+        <input  type="text" ng-model="search" placeholder="Busqueda equipo"/>
+      </div>
+      <!-- List group -->
+
+      <div  class="panel panel-default container-fluid">
+        <div ng-bind-html="thisCanBeusedInsideNgBindHtml"></div>
+          <div class="input-group">
+            <div class="col-lg-4 col-md-4 col-sm-6 text-center">
+              <div class="media">
+                <div class="media-body">
+                  <p class="media-heading">Dispositivo</p>
+                  <input class ="form-control" ng-model="dispositivoInput.dispositivo"/>
+                </div>
+              </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 text-center">
+                <div class="media">
+                  <div class="media-body">
+                    <p class="media-heading">Numero</p>
+                    <input class ="form-control" ng-model="dispositivoInput.numero"/>
+                  </div>
+                </div>
+              </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 text-center">
+                  <div class="media">
+                    <div class="media-body">
+                      <p class="media-heading">Marca</p>
+                      <select ng-model="dispositivoInput.marca" ng-options="marcas.marca as (dispositivo.marca) for dispositivos in celulares.dispositivos">
+                      </select>
+                  </div>
+                </div>
+              </div>
+              <span class="input-group-btn">
+              <button class="btn btn-default" ng-hide="hide()" ng-click="addDispositivo(dispositivoInput)">Añadir</button><br/>
+              <button class="btn btn-default" ng-hide="show()" ng-click="show2()">Regresar</button>
+            </span>
+          </div>
+        </div>
+      </div>
+
+    <div class="container-fluid ">
+      <div  class="panel panel-default container-fluid">
+      <table class="table table-responsive ">
+        <thead>
+          <tr>
+            <th>Dispositivo</th>
+            <th>Numero de telefono</th>
+            <th>Marca telefono</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+
+        <tbody ng-repeat="celular in celulares.dispositivos | orderBy:'dispositivo'|filter:search">
+          <tr>
+            <td>{{celular.dispositivo}}</td>
+            <td>{{celular.numero}}</td>
+            <td>{{celular.marca}}</td>
+
+            <td>
+              <div class="row">
+              <div class="form-group">
+              <div><button type="button" class="btn btn-default btn" ng-click="editarDispositivo(celular)" ><i class="glyphicon glyphicon-pencil"></i></button></div>
+            </div>
+            <div class="form-group">
+            <div><button type="button" class="btn btn-default btn" ng-click="removeDispositivo(celular.id)"><i class="glyphicon glyphicon-trash"></i></button></div>
+          </div>
+          </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+
+
+
+  <div class="container">
+    <div class="row">
+      <a class= "btn btn-success" href="#!/about" >Regresar</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+</div>

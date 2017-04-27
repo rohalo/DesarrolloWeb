@@ -1,0 +1,53 @@
+
+<div class="row container-fluid">
+
+  <!-- <a href="" ng-click="showme=true">Show</a>
+    <button ng-click="showme=false">Hide</button>
+
+    <div class="wrapper">
+      <p ng-hide="showme">It will appear here!</p>
+      <h2 ng-show="showme">This is mah content, yo!</h2>
+    </div> -->
+
+      <!--- side-nav--->
+      <div class="side-nav" ng-controller="AboutCtrl">
+        <nav>
+          <ul>
+            <li>
+              <a href="#!/dispositivos" >
+                <span><i class="fa fa-user"></i></span>
+                <span>Dispositivo</span>
+              </a>
+            </li>
+            <li>
+              <a href="#!/recarga" >
+                <span><i class="fa fa-envelope"></i></span>
+                <span>Recarga</span>
+              </a>
+            </li>
+            <li>
+              <a href="#!/viaje" >
+                <span><i class="fa fa-bar-chart"></i></span>
+                <span>Planea viaje</span>
+              </a>
+            </li>
+            <li>
+              <a href="#!/historial" >
+                <span><i class="fa fa-credit-card-alt"></i></span>
+                <span>Historial</span>
+              </a>
+            </li>
+            <li>
+              <a href="#!/administrador" >
+                <span><i class="glyphicon glyphicon-dashboard"></i></span>
+                <span>Administrador </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class=" container-fluid main-content" ui-view>
+
+      </div>
+    </div>

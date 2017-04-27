@@ -1,0 +1,45 @@
+
+<div ng-controller="HistorialCtrl">
+<div class="container-fluid screenCenter textosColor" >
+  <div class="panel panel-default container-fluid">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Historial de viajes</div>
+    <div class="panel-body">
+      <input class="date"  ng-model="date" type="date" placeholder="Ingrese la fecha"/>
+    </div>
+    <!-- List group -->
+
+  <div class="container-fluid ">
+    <table class="table table-responsive table-hover">
+      <thead>
+        <tr>
+          <th>Estacion</th>
+          <th>Servicio</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+        </tr>
+      </thead>
+
+      <tbody ng-repeat="viaje in modeloViajes.viajes | orderBy:'fecha'|filter:date">
+        <tr ng-click="modal($scope.viaje.viajeId)">
+          <td>{{viaje.estacion}}</td>
+          <td>{{viaje.servicio}}</td>
+          <td>{{viaje.fecha}}</td>
+          <td>{{viaje.hora}}</td>
+          <td class="noMostrar">{{viaje.viajeId}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <a class= "btn btn-success" href="#!/about" >Regresar</a>
+  </div>
+</div>
+</div>
+
+</div>
+<div>

@@ -1,0 +1,161 @@
+<div ng-controller="MainCtrl">
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="3000" id="bs-carousel">
+
+<!-- Indicators -->
+<ol class="carousel-indicators">
+<li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+<li data-target="#bs-carousel" data-slide-to="1"></li>
+</ol>
+
+<!-- Wrapper for slides -->
+<div class="carousel-inner">
+<div class="item slides active">
+  <div class="overlay"></div>
+  <div class="slide-1"></div>
+  <div class="hero">
+    <hgroup>
+        <h1>Muevete</h1>
+        <h3>Viaje por toda la ciudad sin usar dinero ni tarjetas</h3>
+    </hgroup>
+    <button class="btn btn-hero btn-lg"  onClick="document.getElementById('q2').scrollIntoView();" role="button">Servicio</button>
+  </div>
+</div>
+<div class="item slides">
+  <div class="overlay"></div>
+  <div class="slide-3"></div>
+  <div class="hero">
+    <hgroup>
+        <h1>Como tu le haces¿?</h1>
+        <h3>Descubre como hicimos este proyecto</h3>
+    </hgroup>
+    <button  onClick="document.getElementById('slideComo').scrollIntoView();" class="btn btn-hero btn-lg" role="button">Como lo hicimos</button>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- Contenido  -->
+<div class="container-fluid separador">
+</div>
+
+<div class="container-fluid">
+<div class="row altura fondoImg" id="slideComo">
+  <div class="centroLateral .centroLateralIzquierda textosColor centered">
+    <ul class="list-group ">
+      <li class="list-group-item active"><h1> Como lo hacen?</h1></li>
+      <li class="list-group-item"><h3>Tecnologia NFC y Apple pay para el pago del servicio</h3></li>
+      <li class="list-group-item"><h3>Sin necesidad de datos moviles ni Wifi solo tu telefono</h3></li>
+      <li class="list-group-item"><h3>Uso del transporte publico y su infraestructura</h3></li>
+    </ul>
+  </div>
+</div>
+
+<div class="container-fluid separador">
+</div>
+
+<div class=" altura fondoImgQ2" id="q2">
+  <div class="container-fluid">
+    <section class="module">
+<header class="textoAlCentro">
+<h1>Servicios</h1>
+</header>
+<section class="wraper">
+<figure class='small'>
+    <img class="imagenMosaico" src="./views/img/tren.jpg">
+  <figcaption class="transition-050 opacity85">
+    <a>
+      <strong class="text transition-050 title">Tren ligero</strong>
+      <span class="text transition-050 desc">Con este servicio no es necesario contar con tarjeta ni tener que depositar un billete para pagar un viaje de 3 pesos</span>
+    </a>
+  </figcaption>
+</figure>
+<figure class='small'>
+  <a>
+    <img class="imagenMosaico" src="./views/img/metrobus.png">
+  </a>
+  <figcaption class="transition-050 opacity85">
+    <a>
+      <strong class="text transition-050 title">Metrobus</strong>
+      <span class="text transition-050 desc">No te preocupes por las largas filas para cargar en maquina tu tarjeta o por no tener el cambio exacto </span>
+    </a>
+  </figcaption>
+</figure>
+<figure class='small'>
+  <a>
+    <img class="imagenMosaico" src="./views/img/ecobici.jpg">
+  </a>
+  <figcaption class="transition-050 opacity85">
+    <a>
+      <strong class="text transition-050 title">Ecobici</strong>
+      <span class="text transition-050 desc">Utiliza cualquiera de los modulos de la ecobici sin necesidad de ocupar un lugar mas en tu cartera con algo no necesario
+       </span>
+    </a>
+  </figcaption>
+</figure>
+<figure class='small'>
+  <a >
+    <img alt="logo" id="logo" class="imagenMosaico" src="./views/img/metro.png">
+  </a>
+  <figcaption class="transition-050 opacity85">
+    <a >
+      <strong class="text transition-050 title">Metro</strong>
+      <span class="text transition-050 desc">¿No hay internet en la estacion? Sin problemas la aplicacion puede con eso y mas </span>
+    </a>
+  </figcaption>
+</figure>
+</section>
+</section>
+  </div>
+
+</div>
+
+
+
+<div class="container-fluid separador">
+</div>
+
+<div class=" altura" id="q4">
+  <div class="jumbotron trasnForm centered altura jumbotronContacto">
+  <div class="container-fluid">
+
+    <p class="letreroEstilo footerText">Contacto</p>
+    <div class="row">
+    <div class="container col-sm-6 col-md-6 col-lg-6 centered contactoForm">
+      <form>
+        <div class="form-group">
+        <label for="correo">Direccion de correo</label>
+        <input type="email" class="form-control" id="correo" placeholder="Correo">
+        </div>
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Nombre completo">
+      </div>
+      <div class="form-group">
+        <label for="Telefono">Telefono</label>
+        <input type="tel" class="form-control" id="telefono" placeholder="Telefono">
+      </div>
+      <div class="form-group">
+        <label for="comentario">Comentario:</label>
+        <input type="text" class="form-control" id="comentario" placeholder="Comentarios">
+      </div>
+
+      <a href="#" class="btn btn-success"  data-toggle="modal" data-target="#contactoConfirmacion">Contactar</a>
+      </form>
+
+
+
+
+    </div>
+
+
+    <div class="container col-sm-6 col-md-6 col-lg-6 centered contactoFoto contactoFotoNoMostrar" >
+      <img class=" ima img-thumbnail  float-right" src="./views/img/contacto.png">
+    </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+</div>
+</div>

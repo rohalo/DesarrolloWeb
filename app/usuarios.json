@@ -1,0 +1,19 @@
+{
+  "usuarios": [{
+    "id": 0,
+    "saldo": "56",
+    "nombre": "Pedro",
+    "apellido": "Gutierrez",
+    "inscripcion": "26-03-2017",
+    "contrasena": "147258",
+    "estado": false
+  }, {
+    "id": 1,
+    "saldo": "80",
+    "nombre": "Laura",
+    "apellido": "Vazquez",
+    "inscripcion": "10-01-2017",
+    "contrasena": "963258",
+    "estado": true
+  }]
+}

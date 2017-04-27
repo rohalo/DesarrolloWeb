@@ -1,0 +1,15 @@
+{
+  "viajes": [{
+    "id": 0,
+    "estacion": "Del Valle",
+    "servicio": "Viaje",
+    "fecha": "2013-10-04",
+    "hora": "11:00:30"
+  }, {
+    "id": 1,
+    "estacion": "Siqueiros",
+    "servicio": "Viaje",
+    "fecha": "2016-11-01",
+    "hora": "12:00:30"
+  }]
+}

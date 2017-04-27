@@ -1,0 +1,29 @@
+.headerLogo{
+  width: 70px;
+}
+
+
+
+.fond{
+  background:url("http://lorempixel.com/1600/1400/transport");
+}
+.ima{
+  width: auto;
+  height: 200px;
+
+}
+
+.center { margin: 0 auto; }
+.content{ margin: 0 auto; width: 960px; }
+.clear { clear: both; }
+
+.centered {
+   text-align: center;
+   font-size: 0;
+}
+.centered > div {
+   float: none;
+   display: inline-block;
+   text-align: left;
+   font-size: 13px;
+}

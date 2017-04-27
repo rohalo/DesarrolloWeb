@@ -1,0 +1,46 @@
+.headerLogo{
+  width: 50px;
+}
+
+.container-fluid{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.header {
+    position: fixed;
+
+
+    display:block;
+    background-color: #f39c12;
+}
+
+.center { margin: 0 auto; }
+.content{ margin: 0 auto; width: 960px; }
+.clear { clear: both; }
+
+.imalogo{
+  width: 400px;
+  height: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.ima{
+  width: 200px;
+  height: 200px;
+
+}
+
+.centered {
+   text-align: center;
+   font-size: 0;
+}
+
+.ima{
+  width: auto;
+  height: 200px;
+}

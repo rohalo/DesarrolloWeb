@@ -1,0 +1,13 @@
+{
+  "dispositivos": [{
+    "id": 0,
+    "dispositivo": "Issac",
+    "numero": "5568006461",
+    "marca": "Samsung"
+  }, {
+    "id": 2,
+    "dispositivo": "Rupert",
+    "numero": "5588996623",
+    "marca": "Apple"
+  }]
+}

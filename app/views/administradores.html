@@ -1,0 +1,126 @@
+<div class="header">
+  <div class="col-xs12">
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+        <ul class="nav navbar-nav">
+          <li><a ng-href="#!/administrador">Usuarios</a></li>
+          <li class="active"><a ng-href="#!/administradores">Administradores</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<p></p>
+<div ng-controller="AdminCtrl screenCenter">
+  <div class="page-header text-center container textosColor panel">
+
+  <h1>Lista de Administradores Activos</h1>
+  <div class="input-group">
+  <input class ="form-control" ng-model="searchKeyword2"/>
+  <span class="input-group-btn">
+  <button class="btn btn-default" ng-click="">Buscar</button>
+  </span>
+  </div>
+  <p></p>
+
+  <div  class="panel">
+  <div ng-bind-html="thisCanBeusedInsideNgBindHtml"></div>
+    <div class="input-group">
+      <div class="col-lg-4 col-md-4 col-sm-6 text-center">
+        <div class="media">
+          <div class="media-body">
+            <h2 class="media-heading">Nombre</h2>
+            <input class ="form-control" ng-model="administradorInput.nombre"/>
+          </div>
+        </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 text-center">
+          <div class="media">
+            <div class="media-body">
+              <h2 class="media-heading">Apellido</h2>
+              <input class ="form-control" ng-model="administradorInput.apellido"/>
+            </div>
+          </div>
+        </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 text-center">
+            <div class="media">
+              <div class="media-body">
+                <h2 class="media-heading">Inscripción</h2>
+                <input class ="form-control" ng-model="administradorInput.inscripcion"/>
+            </div>
+          </div>
+        </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 text-center">
+              <div class="media">
+                <div class="media-body">
+                  <h2 class="media-heading">Contraseña</h2>
+                  <input class ="form-control" ng-model="administradorInput.contrasena"/>
+                </div>
+              </div>
+            </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 text-center">
+          <div class="media">
+            <div class="media-body">
+              <h2 class="media-heading">Domicilio</h2>
+              <input class ="form-control" ng-model="administradorInput.domicilio"/>
+            </div>
+          </div>
+        </div>
+        <span class="input-group-btn">
+        <button class="btn btn-default btn-lg" ng-hide="hide()" ng-click="addAdministrador(administradorInput)">Añadir</button><br/>
+        <button class="btn btn-default btn-lg" ng-hide="show()" ng-click="show2()">Regresar</button>
+        </span>
+      </div>
+      <p></p>
+    </div>
+
+  <div ng-hide="mostrarAdministradores">
+  <table class = "table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Inscripción</th>
+        <th>Contraseña</th>
+        <th>Domicilio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="administrador in modelo.administradores | filter: searchKeyword2">
+        <td>{{administrador.id}}</td>
+        <td>{{administrador.nombre}}</td>
+        <td>{{administrador.apellido}}</td>
+        <td>{{administrador.inscripcion}}</td>
+        <td>{{administrador.contrasena}}</td>
+        <td>{{administrador.domicilio}}</td>
+        <td><input type="button" value="Remove" class="btn btn-primary" ng-click="removeAdministrador(administrador.id)"/></td>
+        <td><input type="button" value="Editar" class="btn btn-primary" ng-click="editarAdministrador(administrador)"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <a class= "btn btn-success" href="#!/about" >Regresar</a>
+  </div>
+</div>
+  </div>
+
+
+</div>
+</div>
